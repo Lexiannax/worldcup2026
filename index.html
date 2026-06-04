@@ -3,19 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Levi's Stadium World Cup 2026 — Intelligence Hub | Civic Watch</title>
-<meta name="description" content="Live World Cup 2026 news feed, countdown timers, match schedule, and fan guide for all 6 matches at Levi's Stadium, Santa Clara. Bay Area insider tips from stadium staff." />
-<meta name="keywords" content="Levis Stadium World Cup 2026, FIFA World Cup San Francisco Bay Area, Santa Clara World Cup 2026, World Cup 2026 fan guide, FIFA 2026 parking transit tips, Levis Stadium match day guide" />
+<title>Levi's Stadium World Cup 2026 — Intelligence Hub | San Francisco Bay Area</title>
+<meta name="description" content="Live World Cup 2026 news, countdown timers, match schedule, and fan guide for all 6 matches at Levi's Stadium, Santa Clara. Bay Area insider tips from stadium staff." />
+<meta name="keywords" content="Levis Stadium World Cup 2026, FIFA World Cup San Francisco Bay Area, Santa Clara World Cup 2026, World Cup 2026 fan guide, FIFA 2026 parking transit tips" />
 <meta property="og:title" content="Levi's Stadium World Cup 2026 — Intelligence Hub" />
 <meta property="og:description" content="Live news, countdown timers, and insider match-day tips for all 6 World Cup games at Levi's Stadium." />
 <meta property="og:type" content="website" />
 
-<!-- ============================================================
-     GOOGLE ADSENSE — AUTO ADS
-     This single script is enough. Google will automatically
-     place ads on the page. No ad unit codes needed.
-     Do NOT remove this script.
-============================================================ -->
+<!-- GOOGLE ADSENSE AUTO ADS — do not remove -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3227592099558305" crossorigin="anonymous"></script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,7 +37,6 @@
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   html { scroll-behavior: smooth; }
 
   body {
@@ -54,7 +48,6 @@
     overflow-x: hidden;
   }
 
-  /* Pitch grid texture */
   body::before {
     content: '';
     position: fixed;
@@ -66,9 +59,7 @@
     z-index: 0;
   }
 
-  /* =====================
-     TOPBAR
-  ===================== */
+  /* TOPBAR */
   .topbar {
     background: var(--surface);
     border-bottom: 1px solid var(--border);
@@ -147,9 +138,7 @@
 
   .nav-link:hover { color: var(--gold); border-color: var(--gold); }
 
-  /* =====================
-     UPDATE BAR
-  ===================== */
+  /* UPDATE BAR */
   .update-bar {
     background: linear-gradient(90deg, rgba(240,192,64,0.08), transparent);
     border-bottom: 1px solid rgba(240,192,64,0.2);
@@ -185,9 +174,7 @@
     margin-bottom: 2px;
   }
 
-  /* =====================
-     HERO HEADER
-  ===================== */
+  /* HERO */
   .hero {
     position: relative;
     z-index: 5;
@@ -200,8 +187,7 @@
   .hero::after {
     content: 'WC26';
     position: absolute;
-    right: -20px;
-    top: -30px;
+    right: -20px; top: -30px;
     font-family: var(--display);
     font-size: 220px;
     color: rgba(240,192,64,0.04);
@@ -249,9 +235,7 @@
 
   .hero-sub strong { color: var(--gold); font-weight: 500; }
 
-  /* =====================
-     MAIN LAYOUT
-  ===================== */
+  /* PAGE WRAP */
   .page-wrap {
     position: relative;
     z-index: 5;
@@ -260,9 +244,7 @@
     padding: 0 20px 60px;
   }
 
-  /* =====================
-     COUNTDOWN HERO
-  ===================== */
+  /* COUNTDOWN BLOCK */
   .next-match-block {
     background: linear-gradient(135deg, var(--card) 0%, var(--pitch) 100%);
     border: 1px solid var(--border);
@@ -277,8 +259,7 @@
   .next-match-block::before {
     content: 'NEXT MATCH';
     position: absolute;
-    right: -8px;
-    top: -16px;
+    right: -8px; top: -16px;
     font-family: var(--display);
     font-size: 120px;
     color: rgba(255,255,255,0.02);
@@ -307,18 +288,9 @@
     flex-wrap: wrap;
   }
 
-  .vs-sep {
-    font-size: 0.4em;
-    color: var(--gold);
-    font-family: var(--mono);
-  }
+  .vs-sep { font-size: 0.4em; color: var(--gold); font-family: var(--mono); }
 
-  .countdown {
-    display: flex;
-    gap: 18px;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-  }
+  .countdown { display: flex; gap: 18px; flex-wrap: wrap; margin-bottom: 20px; }
 
   .cd-unit { text-align: center; min-width: 64px; }
 
@@ -350,24 +322,18 @@
     font-family: var(--mono);
   }
 
-  /* =====================
-     TWO-COLUMN LAYOUT
-  ===================== */
+  /* TWO COLUMN */
   .two-col {
     display: grid;
-    grid-template-columns: 1fr 340px;
+    grid-template-columns: 1fr 320px;
     gap: 24px;
     align-items: start;
     margin-bottom: 40px;
   }
 
-  @media (max-width: 860px) {
-    .two-col { grid-template-columns: 1fr; }
-  }
+  @media (max-width: 860px) { .two-col { grid-template-columns: 1fr; } }
 
-  /* =====================
-     SECTION LABELS
-  ===================== */
+  /* SECTION LABELS */
   .section-label {
     font-family: var(--mono);
     font-size: 9px;
@@ -387,9 +353,7 @@
     background: var(--border);
   }
 
-  /* =====================
-     SCHEDULE CARDS
-  ===================== */
+  /* SCHEDULE */
   .schedule-grid { display: grid; gap: 10px; }
 
   .match-card {
@@ -437,14 +401,13 @@
   .match-time { font-family: var(--display); font-size: 20px; color: var(--text); display: block; }
   .match-tz { font-family: var(--mono); font-size: 9px; color: var(--muted); letter-spacing: 1px; }
 
-  /* =====================
-     NEWS FEED PANEL
-  ===================== */
+  /* NEWS PANEL */
   .news-panel {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 4px;
     overflow: hidden;
+    margin-top: 32px;
   }
 
   .news-panel-header {
@@ -456,12 +419,7 @@
     background: var(--card);
   }
 
-  .news-panel-title {
-    font-family: var(--display);
-    font-size: 16px;
-    letter-spacing: 1px;
-    color: var(--text);
-  }
+  .news-panel-title { font-family: var(--display); font-size: 16px; letter-spacing: 1px; }
 
   .refresh-btn {
     background: none;
@@ -515,26 +473,12 @@
     margin-bottom: 5px;
   }
 
-  .news-headline {
-    font-weight: 600;
-    font-size: 13px;
-    line-height: 1.4;
-    color: var(--text);
-    margin-bottom: 5px;
-  }
-
+  .news-headline { font-weight: 600; font-size: 13px; line-height: 1.4; color: var(--text); margin-bottom: 5px; }
   .news-headline a { color: inherit; text-decoration: none; }
   .news-headline a:hover { color: var(--gold); }
-
   .news-snippet { font-size: 11px; color: var(--muted); line-height: 1.5; }
 
-  .news-meta {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 7px;
-  }
-
+  .news-meta { display: flex; align-items: center; gap: 8px; margin-top: 7px; }
   .news-age { font-family: var(--mono); font-size: 9px; color: var(--muted); }
 
   .news-tag {
@@ -551,9 +495,16 @@
   .news-tag.levis { background: rgba(240,192,64,0.1); color: var(--gold); }
   .news-tag.breaking { background: rgba(255,61,87,0.1); color: var(--red); }
 
-  /* =====================
-     RIGHT SIDEBAR
-  ===================== */
+  .error-msg {
+    padding: 20px 18px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    text-align: center;
+    line-height: 1.8;
+  }
+
+  /* SIDEBAR */
   .sidebar { display: grid; gap: 16px; }
 
   .stat-block {
@@ -586,11 +537,7 @@
   .stat-row:last-child { border-bottom: none; }
   .stat-val { font-family: var(--mono); color: var(--gold); font-size: 13px; font-weight: 600; }
 
-  .group-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 11px;
-  }
+  .group-table { width: 100%; border-collapse: collapse; font-size: 11px; }
 
   .group-table th {
     font-family: var(--mono);
@@ -605,21 +552,12 @@
   }
 
   .group-table th:first-child { text-align: left; }
-
-  .group-table td {
-    padding: 6px 8px;
-    text-align: right;
-    border-bottom: 1px solid var(--border);
-    color: var(--muted);
-  }
-
+  .group-table td { padding: 6px 8px; text-align: right; border-bottom: 1px solid var(--border); color: var(--muted); }
   .group-table td:first-child { text-align: left; color: var(--text); font-weight: 500; }
   .group-table tr:last-child td { border-bottom: none; }
   .pts { color: var(--gold); font-weight: 700; font-family: var(--mono); }
 
-  /* =====================
-     TIPS SECTION
-  ===================== */
+  /* TIPS */
   .tips-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
@@ -641,98 +579,18 @@
   .tip-body { font-size: 12px; color: var(--muted); line-height: 1.7; }
   .tip-body strong { color: var(--text); font-weight: 500; }
 
-  /* =====================
-     EMAIL SIGNUP
-  ===================== */
-  .signup-box {
-    background: linear-gradient(135deg, var(--pitch) 0%, var(--card) 100%);
-    border: 1px solid var(--gold-dim);
-    border-radius: 6px;
-    padding: 32px;
-    text-align: center;
-    margin-bottom: 40px;
-  }
-
-  .signup-box h2 {
-    font-family: var(--display);
-    font-size: 34px;
-    letter-spacing: 0.04em;
-    margin-bottom: 6px;
-    color: var(--text);
-  }
-
-  .signup-box p { color: var(--muted); font-size: 13px; margin-bottom: 20px; font-weight: 300; }
-
-  .signup-form {
-    display: flex;
-    gap: 10px;
-    max-width: 400px;
-    margin: 0 auto;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .signup-form input {
-    flex: 1;
-    min-width: 180px;
-    background: rgba(0,0,0,0.4);
-    border: 1px solid var(--border);
-    border-radius: 3px;
-    padding: 10px 13px;
-    color: var(--text);
-    font-family: var(--sans);
-    font-size: 13px;
-    outline: none;
-    transition: border-color 0.2s;
-  }
-
-  .signup-form input:focus { border-color: var(--gold); }
-  .signup-form input::placeholder { color: var(--muted); }
-
-  .btn {
-    background: var(--gold);
-    color: var(--bg);
-    border: none;
-    border-radius: 3px;
-    padding: 10px 20px;
-    font-family: var(--sans);
-    font-weight: 700;
-    font-size: 13px;
-    cursor: pointer;
-    transition: background 0.2s;
-    white-space: nowrap;
-  }
-
-  .btn:hover { background: #f5d060; }
-  .signup-note { font-size: 10px; color: var(--muted); margin-top: 8px; font-family: var(--mono); opacity: 0.6; }
-
-  /* =====================
-     SYSTEM STATUS
-  ===================== */
-  .status-block {
-    background: var(--surface);
-    border: 1px solid var(--border);
+  /* ADSENSE SLOTS */
+  .ad-slot {
+    background: rgba(240,192,64,0.03);
+    border: 1px dashed rgba(240,192,64,0.15);
     border-radius: 4px;
+    padding: 8px;
+    text-align: center;
+    margin: 24px 0;
     overflow: hidden;
   }
 
-  .status-row {
-    display: flex;
-    justify-content: space-between;
-    padding: 7px 14px;
-    border-bottom: 1px solid var(--border);
-    font-family: var(--mono);
-    font-size: 10px;
-    color: var(--muted);
-  }
-
-  .status-row:last-child { border-bottom: none; }
-  .status-ok { color: var(--green); }
-  .status-warn { color: var(--gold); }
-
-  /* =====================
-     FOOTER
-  ===================== */
+  /* FOOTER */
   footer {
     position: relative;
     z-index: 5;
@@ -748,9 +606,7 @@
   footer a { color: var(--gold-dim); text-decoration: none; }
   footer a:hover { color: var(--gold); }
 
-  /* =====================
-     EMPTY / SKELETON
-  ===================== */
+  /* SKELETON */
   .skeleton {
     background: linear-gradient(90deg, var(--border) 25%, var(--card) 50%, var(--border) 75%);
     background-size: 200% 100%;
@@ -769,9 +625,7 @@
   .skeleton.snippet { width: 55%; height: 11px; }
   .skeleton.meta { width: 25%; height: 9px; }
 
-  /* =====================
-     RESPONSIVE
-  ===================== */
+  /* RESPONSIVE */
   @media (max-width: 640px) {
     .match-card { grid-template-columns: 50px 1fr; }
     .match-time-col { display: none; }
@@ -780,10 +634,8 @@
     .cd-unit { min-width: 52px; }
     .update-bar { flex-direction: column; gap: 7px; }
     .topbar-right .nav-link { display: none; }
-    #clock { font-size: 10px; }
   }
 
-  /* Scrollbar */
   ::-webkit-scrollbar { width: 4px; }
   ::-webkit-scrollbar-track { background: var(--surface); }
   ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
@@ -799,19 +651,9 @@
   </div>
   <div class="topbar-right">
     <span id="clock">--:--:--</span> PT
-    <a href="index.html" class="nav-link">FAN GUIDE</a>
+    <a href="fanguide.html" class="nav-link">FAN GUIDE</a>
   </div>
 </div>
-
-<!-- ============================================================
-     LATEST UPDATE BOX
-     HOW TO EDIT FROM YOUR PHONE:
-     1. Go to your GitHub repo
-     2. Click hub.html, then the pencil (edit) icon
-     3. Find UPDATE START and UPDATE END comments below
-     4. Change only the date and message text
-     5. Click "Commit changes" — live in under 60 seconds
-============================================================ -->
 
 <!-- UPDATE START — edit only the date and message below -->
 <div class="update-bar">
@@ -823,18 +665,28 @@
 </div>
 <!-- UPDATE END -->
 
+<!-- TOP ADSENSE -->
+<div class="ad-slot">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-3227592099558305"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
 <!-- HERO -->
 <div class="hero">
   <div class="hero-inner">
     <div class="hero-badge"><span class="live-dot"></span>6 Matches · Levi's Stadium · Santa Clara</div>
     <h1>San Francisco<span>World Cup 2026</span></h1>
-    <p class="hero-sub">Live news feed, countdowns, and <strong>insider match-day tips</strong> for every game at Levi's Stadium. Fan guide by stadium staff.</p>
+    <p class="hero-sub">Live news, countdowns, and <strong>insider match-day tips</strong> for every game at Levi's Stadium. Fan guide by stadium staff.</p>
   </div>
 </div>
 
 <div class="page-wrap">
 
-  <!-- NEXT MATCH COUNTDOWN -->
+  <!-- COUNTDOWN -->
   <div class="next-match-block">
     <div class="next-label" id="heroLabel">Loading...</div>
     <div class="match-teams-hero" id="heroTeams"></div>
@@ -847,28 +699,37 @@
     <div class="match-meta-hero" id="heroMeta"></div>
   </div>
 
-  <!-- TWO COLUMN: SCHEDULE + SIDEBAR -->
+  <!-- TWO COLUMN -->
   <div class="two-col">
 
-    <!-- LEFT: SCHEDULE + NEWS -->
+    <!-- LEFT -->
     <div>
       <div class="section-label">Full Schedule — Levi's Stadium</div>
       <div class="schedule-grid" id="scheduleGrid"></div>
 
-      <div style="margin: 32px 0;">
-        <div class="section-label">World Cup News Feed</div>
-        <div class="news-panel">
-          <div class="news-panel-header">
-            <div class="news-panel-title">INTELLIGENCE FEED</div>
-            <button class="refresh-btn" id="refreshBtn" onclick="loadNews()">↻ REFRESH</button>
-          </div>
-          <div id="loadingBar" class="loading-bar" style="display:none;"></div>
-          <div id="feedContent"></div>
+      <!-- MID ADSENSE -->
+      <div class="ad-slot">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-3227592099558305"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+
+      <!-- NEWS FEED -->
+      <div class="section-label">World Cup News</div>
+      <div class="news-panel">
+        <div class="news-panel-header">
+          <div class="news-panel-title">LATEST NEWS</div>
+          <button class="refresh-btn" id="refreshBtn" onclick="loadNews()">↻ REFRESH</button>
         </div>
+        <div id="loadingBar" class="loading-bar" style="display:none;"></div>
+        <div id="feedContent"></div>
       </div>
     </div>
 
-    <!-- RIGHT: SIDEBAR -->
+    <!-- RIGHT SIDEBAR -->
     <div class="sidebar">
 
       <div class="stat-block">
@@ -919,17 +780,20 @@
         </table>
       </div>
 
-      <div class="status-block">
-        <div class="stat-block-header">System Status</div>
-        <div class="status-row"><span>NEWS ENGINE</span><span class="status-ok">ONLINE</span></div>
-        <div class="status-row"><span>COUNTDOWNS</span><span class="status-ok">LIVE</span></div>
-        <div class="status-row"><span>LAST SYNC</span><span id="lastSync" class="status-warn">--</span></div>
+      <!-- SIDEBAR ADSENSE -->
+      <div class="ad-slot">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-3227592099558305"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
       </div>
 
     </div>
   </div>
 
-  <!-- PRACTICAL TIPS -->
+  <!-- TIPS -->
   <div class="section-label">Match Day Practical Guide</div>
   <div class="tips-grid">
 
@@ -947,7 +811,7 @@
       <div class="tip-title">Getting There</div>
       <div class="tip-body">
         <strong>Caltrain to Mountain View</strong> then VTA light rail to Great America Station. Add 30 extra minutes from SF.
-        <strong>Driving:</strong> Lots open 3 hours before kickoff. Budget $50 to $80 cash. <strong>Rideshare pickup:</strong> Gate F / Tasman lot after the match, not the main entrance.
+        <strong>Driving:</strong> Lots open 3 hours before kickoff. Budget $50 to $80 cash. <strong>Rideshare pickup:</strong> Gate F / Tasman lot after the match.
       </div>
     </div>
 
@@ -989,37 +853,33 @@
 
   </div>
 
-  <!-- EMAIL SIGNUP -->
-  <div class="signup-box">
-    <h2>Get Match Day Updates</h2>
-    <p>Gate tips, transit alerts, and conditions notes before each match.</p>
-    <div class="signup-form">
-      <input type="email" placeholder="your@email.com" id="emailInput">
-      <button class="btn" onclick="handleSignup()">Notify Me</button>
-    </div>
-    <div class="signup-note" id="signupNote">No spam. Unsubscribe anytime.</div>
+  <!-- BOTTOM ADSENSE -->
+  <div class="ad-slot">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-3227592099558305"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
   </div>
 
 </div>
 
 <footer>
   <div>Levi's Stadium · Santa Clara, California · FIFA World Cup 2026</div>
-  <div>6 Matches · June 13 – July 1 · <a href="index.html">Fan Guide</a></div>
+  <div>6 Matches · June 13 – July 1 · <a href="fanguide.html">Fan Guide</a></div>
   <div style="margin-top:6px; opacity:0.45;">Independent fan guide. Not affiliated with FIFA, Levi's Stadium, or any official tournament body.</div>
 </footer>
 
 <script>
-// ============================================================
-// MATCHES — all times Pacific (PT)
-// Update "Round of 32" teams once FIFA announces them
-// ============================================================
+// MATCHES
 const MATCHES = [
   { teams:"Qatar vs Switzerland",  group:"Group B", date:new Date("2026-06-13T12:00:00-07:00"), day:"13", month:"JUN", time:"12:00 PM" },
   { teams:"Austria vs Jordan",     group:"Group J", date:new Date("2026-06-16T21:00:00-07:00"), day:"16", month:"JUN", time:"9:00 PM"  },
   { teams:"Türkiye vs Paraguay",   group:"Group D", date:new Date("2026-06-19T21:00:00-07:00"), day:"19", month:"JUN", time:"9:00 PM"  },
   { teams:"Jordan vs Algeria",     group:"Group J", date:new Date("2026-06-22T20:00:00-07:00"), day:"22", month:"JUN", time:"8:00 PM"  },
   { teams:"Paraguay vs Australia", group:"Group D", date:new Date("2026-06-25T19:00:00-07:00"), day:"25", month:"JUN", time:"7:00 PM"  },
-  { teams:"Round of 32 Knockout",  group:"Knockout Stage", date:new Date("2026-07-01T17:00:00-07:00"), day:"01", month:"JUL", time:"5:00 PM"  }
+  { teams:"Round of 32 Knockout",  group:"Knockout Stage", date:new Date("2026-07-01T17:00:00-07:00"), day:"01", month:"JUL", time:"5:00 PM" }
 ];
 
 function pad(n) { return String(n).padStart(2,'0'); }
@@ -1035,21 +895,17 @@ function getCountdown(target) {
   };
 }
 
-function getNextMatch() {
-  return MATCHES.find(m => m.date > new Date()) || null;
-}
+function getNextMatch() { return MATCHES.find(m => m.date > new Date()) || null; }
 
-// ── CLOCK ──
+// CLOCK
 function updateClock() {
-  const now = new Date();
-  const pt = new Date(now.toLocaleString('en-US', { timeZone: 'America/Los_Angeles' }));
-  document.getElementById('clock').textContent =
-    pad(pt.getHours()) + ':' + pad(pt.getMinutes()) + ':' + pad(pt.getSeconds());
+  const pt = new Date(new Date().toLocaleString('en-US', { timeZone: 'America/Los_Angeles' }));
+  document.getElementById('clock').textContent = pad(pt.getHours()) + ':' + pad(pt.getMinutes()) + ':' + pad(pt.getSeconds());
 }
 setInterval(updateClock, 1000);
 updateClock();
 
-// ── HERO COUNTDOWN ──
+// HERO COUNTDOWN
 function updateHero() {
   const next = getNextMatch();
   if (!next) {
@@ -1060,8 +916,7 @@ function updateHero() {
   }
   const cd = getCountdown(next.date);
   document.getElementById('heroLabel').textContent = next.group + ' · Levi\'s Stadium, Santa Clara';
-  document.getElementById('heroTeams').innerHTML =
-    next.teams.replace(' vs ', ' <span class="vs-sep">vs</span> ');
+  document.getElementById('heroTeams').innerHTML = next.teams.replace(' vs ', ' <span class="vs-sep">vs</span> ');
   if (cd) {
     document.getElementById('cd-days').textContent  = cd.days;
     document.getElementById('cd-hours').textContent = pad(cd.hours);
@@ -1074,7 +929,7 @@ function updateHero() {
      <span>📍 Santa Clara, CA</span>`;
 }
 
-// ── SCHEDULE ──
+// SCHEDULE
 function renderSchedule() {
   const now = new Date();
   const next = getNextMatch();
@@ -1086,9 +941,7 @@ function renderSchedule() {
     const cd = getCountdown(m.date);
     let miniCd = '';
     if (!isPast && cd) {
-      miniCd = cd.days > 0
-        ? `${cd.days}d ${pad(cd.hours)}h ${pad(cd.mins)}m`
-        : `${pad(cd.hours)}h ${pad(cd.mins)}m ${pad(cd.secs)}s`;
+      miniCd = cd.days > 0 ? `${cd.days}d ${pad(cd.hours)}h ${pad(cd.mins)}m` : `${pad(cd.hours)}h ${pad(cd.mins)}m ${pad(cd.secs)}s`;
     }
     const card = document.createElement('div');
     card.className = 'match-card' + (isPast ? ' completed' : '') + (isNext ? ' next-up' : '');
@@ -1116,79 +969,63 @@ function updateMiniCountdowns() {
     if (!el) return;
     const cd = getCountdown(m.date);
     if (!cd) return;
-    el.textContent = cd.days > 0
-      ? `⏱ ${cd.days}d ${pad(cd.hours)}h ${pad(cd.mins)}m`
-      : `⏱ ${pad(cd.hours)}h ${pad(cd.mins)}m ${pad(cd.secs)}s`;
+    el.textContent = cd.days > 0 ? `⏱ ${cd.days}d ${pad(cd.hours)}h ${pad(cd.mins)}m` : `⏱ ${pad(cd.hours)}h ${pad(cd.mins)}m ${pad(cd.secs)}s`;
   });
 }
 
-// ── NEWS FEED (AI-powered via Anthropic) ──
-const NEWS_SOURCES = [
-  { tag: 'BBC SPORT', color: '#f0c040' },
-  { tag: 'AP NEWS', color: '#4fc3f7' },
-  { tag: 'ESPN FC', color: '#00e676' },
-  { tag: 'REUTERS', color: '#ff3d57' },
-  { tag: 'FIFA OFFICIAL', color: '#f0c040' },
-  { tag: 'THE GUARDIAN', color: '#4fc3f7' }
-];
-
-function showSkeleton() {
+// NEWS FEED — pulls real headlines via Google RSS
+async function loadNews() {
+  const btn = document.getElementById('refreshBtn');
+  const bar = document.getElementById('loadingBar');
   const feed = document.getElementById('feedContent');
+  btn.classList.add('spinning');
+  btn.textContent = '↻ LOADING';
+  bar.style.display = 'block';
+
   feed.innerHTML = Array(5).fill(0).map(() => `
     <div class="news-item">
       <div class="skeleton title"></div>
       <div class="skeleton snippet"></div>
       <div class="skeleton meta"></div>
     </div>`).join('');
-}
-
-async function loadNews() {
-  const btn = document.getElementById('refreshBtn');
-  const bar = document.getElementById('loadingBar');
-  btn.classList.add('spinning');
-  btn.textContent = '↻ LOADING';
-  bar.style.display = 'block';
-  showSkeleton();
 
   try {
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 1000,
-        messages: [{
-          role: 'user',
-          content: `Generate 6 realistic FIFA World Cup 2026 news headlines and snippets for today June 2026. Focus on matches at Levi's Stadium in Santa Clara (Qatar vs Switzerland Jun 13, Austria vs Jordan Jun 16, Türkiye vs Paraguay Jun 19, Jordan vs Algeria Jun 22, Paraguay vs Australia Jun 25, Round of 32 Jul 1). Mix of team news, travel tips, fan stories, and match previews.
+    const query = encodeURIComponent('FIFA World Cup 2026 Levis Stadium');
+    const rss = `https://news.google.com/rss/search?q=${query}&hl=en-US&gl=US&ceid=US:en`;
+    const proxy = `https://api.allorigins.win/get?url=${encodeURIComponent(rss)}`;
+    const res = await fetch(proxy);
+    const data = await res.json();
+    const parser = new DOMParser();
+    const xml = parser.parseFromString(data.contents, 'text/xml');
+    const items = Array.from(xml.querySelectorAll('item')).slice(0, 8);
 
-Return ONLY a JSON array, no other text:
-[
-  {
-    "source": "BBC SPORT",
-    "headline": "headline text",
-    "snippet": "one sentence snippet",
-    "age": "2h ago",
-    "tag": "LEVIS",
-    "url": "#"
-  }
-]
-Tags must be one of: LEVIS, BREAKING, or blank string.`
-        }]
-      })
+    if (items.length === 0) throw new Error('No items');
+
+    feed.innerHTML = '';
+    items.forEach(item => {
+      const title = item.querySelector('title')?.textContent || '';
+      const link  = item.querySelector('link')?.textContent || '#';
+      const pub   = item.querySelector('pubDate')?.textContent || '';
+      const src   = item.querySelector('source')?.textContent || 'NEWS';
+      const age   = pub ? timeAgo(new Date(pub)) : '';
+
+      const div = document.createElement('div');
+      div.className = 'news-item';
+      div.innerHTML = `
+        <div class="news-source-tag" style="color:var(--gold)">${src.toUpperCase()}</div>
+        <div class="news-headline"><a href="${link}" target="_blank" rel="noopener">${title}</a></div>
+        <div class="news-meta">
+          <span class="news-age">${age}</span>
+          <span class="news-tag levis">WC2026</span>
+        </div>`;
+      feed.appendChild(div);
     });
 
-    const data = await response.json();
-    const text = data.content.map(i => i.text || '').join('');
-    const clean = text.replace(/```json|```/g, '').trim();
-    const items = JSON.parse(clean);
-    renderNews(items);
-    document.getElementById('lastSync').textContent = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
-  } catch (e) {
-    document.getElementById('feedContent').innerHTML = `
-      <div class="news-item">
-        <div class="news-headline">Could not load live feed. Check your connection and refresh.</div>
-        <div class="news-snippet">News feed requires an internet connection.</div>
-      </div>`;
+    document.getElementById('lastSync') && (document.getElementById('lastSync').textContent =
+      new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }));
+
+  } catch(e) {
+    feed.innerHTML = `<div class="error-msg">Could not load live feed right now.<br>Try refreshing in a moment.</div>`;
   }
 
   btn.classList.remove('spinning');
@@ -1196,41 +1033,14 @@ Tags must be one of: LEVIS, BREAKING, or blank string.`
   bar.style.display = 'none';
 }
 
-function renderNews(items) {
-  const feed = document.getElementById('feedContent');
-  feed.innerHTML = '';
-  items.forEach(item => {
-    const src = NEWS_SOURCES.find(s => s.tag === item.source) || { color: '#5a5a7a' };
-    const tagClass = item.tag === 'LEVIS' ? 'levis' : item.tag === 'BREAKING' ? 'breaking' : '';
-    const div = document.createElement('div');
-    div.className = 'news-item';
-    div.innerHTML = `
-      <div class="news-source-tag" style="color:${src.color}">${item.source}</div>
-      <div class="news-headline"><a href="${item.url}" target="_blank" rel="noopener">${item.headline}</a></div>
-      <div class="news-snippet">${item.snippet}</div>
-      <div class="news-meta">
-        <span class="news-age">${item.age}</span>
-        ${item.tag ? `<span class="news-tag ${tagClass}">${item.tag}</span>` : ''}
-      </div>`;
-    feed.appendChild(div);
-  });
+function timeAgo(date) {
+  const diff = (new Date() - date) / 1000;
+  if (diff < 3600)  return Math.floor(diff/60) + 'm ago';
+  if (diff < 86400) return Math.floor(diff/3600) + 'h ago';
+  return Math.floor(diff/86400) + 'd ago';
 }
 
-// ── EMAIL SIGNUP ──
-function handleSignup() {
-  const email = document.getElementById('emailInput').value.trim();
-  const note = document.getElementById('signupNote');
-  if (!email || !email.includes('@')) {
-    note.textContent = 'Please enter a valid email address.';
-    note.style.color = '#ff3d57';
-    return;
-  }
-  note.textContent = 'You are on the list. We will send match day updates before each game.';
-  note.style.color = '#00e676';
-  document.getElementById('emailInput').value = '';
-}
-
-// ── INIT ──
+// INIT
 renderSchedule();
 updateHero();
 loadNews();
