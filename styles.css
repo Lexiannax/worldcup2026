@@ -300,3 +300,14 @@
   ::-webkit-scrollbar { width: 4px; }
   ::-webkit-scrollbar-track { background: var(--surface); }
   ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+/* GALLERY */
+.wcgal-group { margin-bottom: 22px; }
+.wcgal-label { font-family: var(--mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold-dim); margin-bottom: 10px; }
+.wcgal-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+.wcgal-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border: 1px solid var(--border); border-radius: 4px; cursor: pointer; transition: border-color .2s, transform .15s; background: var(--card); }
+.wcgal-img:hover { border-color: var(--gold); transform: scale(1.02); }
+#wcgal-lb { position: fixed; inset: 0; z-index: 10000; background: rgba(0,0,0,.92); display: none; align-items: center; justify-content: center; flex-direction: column; gap: 12px; cursor: pointer; padding: 20px; }
+#wcgal-lb.open { display: flex; }
+#wcgal-lb img { max-width: 95vw; max-height: 85vh; border: 1px solid var(--gold-dim); border-radius: 4px; }
+#wcgal-lb-x { font-family: var(--mono); font-size: 11px; color: var(--gold); letter-spacing: 1px; }
