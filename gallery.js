@@ -7,7 +7,6 @@
    Photos appear automatically; missing ones stay hidden. No HTML editing needed. */
 (function () {
   'use strict';
-
   var MATCH_LABELS = [
     'Jun 13 — Qatar vs Switzerland',
     'Jun 16 — Austria vs Jordan',
@@ -17,10 +16,8 @@
     'Jul 1 — Round of 32'
   ];
   var LETTERS = ['a', 'b', 'c', 'd', 'e', 'f'];
-
   var host = document.getElementById('gallery');
   if (!host) return;
-
   /* Lightbox */
   var lb = document.createElement('div');
   lb.id = 'wcgal-lb';
@@ -28,34 +25,28 @@
   lb.addEventListener('click', function () { lb.classList.remove('open'); });
   document.body.appendChild(lb);
   var lbImg = lb.querySelector('img');
-
   function openLightbox(src, alt) {
     lbImg.src = src;
     lbImg.alt = alt;
     lb.classList.add('open');
   }
-
   MATCH_LABELS.forEach(function (label, mi) {
     var group = document.createElement('div');
     group.className = 'wcgal-group';
     group.style.display = 'none'; /* hidden until at least one photo loads */
-
     var h = document.createElement('div');
     h.className = 'wcgal-label';
     h.textContent = label;
     group.appendChild(h);
-
     var grid = document.createElement('div');
     grid.className = 'wcgal-grid';
     group.appendChild(grid);
-
     LETTERS.forEach(function (letter) {
       var src = 'match' + (mi + 1) + '-' + letter + '.jpg';
       var img = document.createElement('img');
       img.className = 'wcgal-img';
       img.loading = 'lazy';
       img.alt = label + ' — fan photo';
-      img.src = src;
       img.addEventListener('load', function () {
         group.style.display = '';            /* photo exists: show the group */
       });
@@ -63,9 +54,12 @@
         img.remove();                        /* photo not uploaded yet: hide slot */
       });
       img.addEventListener('click', function () { openLightbox(src, img.alt); });
+      img.src = src;                         /* set src AFTER listeners */
+      if (img.complete && img.naturalWidth > 0) {
+        group.style.display = '';            /* cached image: load already done */
+      }
       grid.appendChild(img);
     });
-
     host.appendChild(group);
   });
 })();
