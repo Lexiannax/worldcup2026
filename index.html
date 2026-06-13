@@ -1,216 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Levi's Stadium World Cup 2026 — Hub | San Francisco Bay Area</title>
-<meta name="description" content="Live World Cup 2026 news, countdown timers, match schedule, and fan guide for all 6 matches at Levi's Stadium, Santa Clara." />
-<meta name="keywords" content="Levis Stadium World Cup 2026, FIFA World Cup San Francisco Bay Area, Santa Clara World Cup 2026" />
-<meta property="og:title" content="Levi's Stadium World Cup 2026 — Hub" />
-<meta property="og:type" content="website" />
-<meta name="referrer" content="strict-origin-when-cross-origin" />
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://pagead2.googlesyndication.com https://*.googlesyndication.com https://*.google.com https://*.googleadservices.com https://*.doubleclick.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src * data:; connect-src 'self' https://api.rss2json.com https://*.googlesyndication.com https://*.google.com https://*.doubleclick.net; frame-src https://*.googlesyndication.com https://*.google.com https://*.doubleclick.net; base-uri 'self'; object-src 'none';" />
-
-<!-- GOOGLE SEARCH CONSOLE VERIFICATION -->
-<meta name="google-site-verification" content="x0d4UdJwhcx8uKanjxOvPtXoIAhao-0BJpqAFpp3cKs" />
-
-<!-- GOOGLE ADSENSE AUTO ADS -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3227592099558305" crossorigin="anonymous"></script>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
-<div class="topbar">
-  <div class="topbar-left">
-    <div class="logo">WC26 <span>// LEVI'S STADIUM HUB</span></div>
-    <div class="live-badge"><div class="live-dot"></div>LIVE</div>
-  </div>
-  <div class="topbar-right">
-    <span id="clock">--:--:--</span> PT
-    <a href="getting-in.html" class="nav-link">GETTING IN</a>
-    <a href="fanguide.html" class="nav-link">FAN GUIDE</a>
-    <a href="teamguide.html" class="nav-link">TEAM GUIDE</a>
-  </div>
-</div>
-
-<!-- UPDATE START — edit only the date and message below -->
-<div class="update-bar">
-  <div class="update-tag">Update</div>
-  <div class="update-text">
-    <span class="update-date">June 11, 2026 — 2 days out</span>
-    First match Saturday June 13: Qatar vs Switzerland, 12:00 PM PT. New: full transit and gates guide on the <a href="getting-in.html" style="color:var(--gold);">Getting In</a> page. Check back match morning for gate conditions and transit notes.
-  </div>
-</div>
-<!-- UPDATE END -->
-
-<!-- TOP AD -->
-<div class="ad-slot">
-  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3227592099558305" data-ad-format="auto" data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-</div>
-
-<div class="hero">
-  <div class="hero-inner">
-    <div class="hero-badge"><span class="live-dot"></span>6 Matches · Levi's Stadium · Santa Clara</div>
-    <h1>San Francisco Bay Area<span>World Cup 2026</span></h1>
-    <p class="hero-sub">Live news, countdowns, and <strong>insider match-day tips</strong> for every game at Levi's Stadium. Fan guide by stadium staff.</p>
-  </div>
-</div>
-
-<div class="page-wrap">
-
-  <div class="next-match-block">
-    <div class="next-label" id="heroLabel">Loading...</div>
-    <div class="match-teams-hero" id="heroTeams"></div>
-    <div class="countdown">
-      <div class="cd-unit"><span class="cd-num" id="cd-days">--</span><span class="cd-label">Days</span></div>
-      <div class="cd-unit"><span class="cd-num" id="cd-hours">--</span><span class="cd-label">Hours</span></div>
-      <div class="cd-unit"><span class="cd-num" id="cd-mins">--</span><span class="cd-label">Mins</span></div>
-      <div class="cd-unit"><span class="cd-num" id="cd-secs">--</span><span class="cd-label">Secs</span></div>
-    </div>
-    <div class="match-meta-hero" id="heroMeta"></div>
-  </div>
-
-  <div class="two-col">
-
-    <div>
-      <div class="section-label">Full Schedule — Levi's Stadium</div>
-      <div class="schedule-grid" id="scheduleGrid"></div>
-
-      <div class="ad-slot" style="margin-top:32px;">
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3227592099558305" data-ad-format="auto" data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-      </div>
-
-      <!-- NEWS FEED -->
-      <div class="section-label" style="margin-top:8px;">Live News Feed</div>
-      <div class="news-panel">
-        <div class="news-panel-header">
-          <div class="news-panel-title">WORLD CUP 2026 NEWS</div>
-          <div class="news-controls">
-            <button class="filter-btn active" onclick="setFilter('all', this)">ALL</button>
-            <button class="filter-btn" onclick="setFilter('levis', this)">LEVI'S</button>
-            <button class="filter-btn" onclick="setFilter('teams', this)">TEAMS</button>
-            <button class="filter-btn" onclick="setFilter('travel', this)">TRAVEL</button>
-            <button class="refresh-btn" id="refreshBtn" onclick="loadNews(true)">↻</button>
-          </div>
-        </div>
-        <div id="loadingBar" class="loading-bar" style="display:none;"></div>
-        <div id="feedContent"></div>
-        <button class="news-load-more" id="loadMoreBtn" onclick="loadMore()" style="display:none;">Load More Articles</button>
-      </div>
-    </div>
-
-    <div class="sidebar">
-
-      <div class="stat-block">
-        <div class="stat-block-header">Tournament Info</div>
-        <div class="stat-row"><span>Tournament Opens</span><span class="stat-val">JUN 11</span></div>
-        <div class="stat-row"><span>Bay Area Opens</span><span class="stat-val">JUN 13</span></div>
-        <div class="stat-row"><span>Teams</span><span class="stat-val">48</span></div>
-        <div class="stat-row"><span>Total Matches</span><span class="stat-val">104</span></div>
-        <div class="stat-row"><span>Final</span><span class="stat-val">JUL 19</span></div>
-      </div>
-
-      <div class="stat-block">
-        <div class="stat-block-header">Group B — Levi's</div>
-        <table class="group-table">
-          <thead><tr><th>Team</th><th>P</th><th>W</th><th>GD</th><th>Pts</th></tr></thead>
-          <tbody>
-            <tr><td>Qatar</td><td>0</td><td>0</td><td>0</td><td class="pts">0</td></tr>
-            <tr><td>Switzerland</td><td>0</td><td>0</td><td>0</td><td class="pts">0</td></tr>
-            <tr><td>Canada</td><td>0</td><td>0</td><td>0</td><td class="pts">0</td></tr>
-            <tr><td>Bosnia &amp; Herz.</td><td>0</td><td>0</td><td>0</td><td class="pts">0</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="stat-block">
-        <div class="stat-block-header">Group D — Levi's</div>
-        <table class="group-table">
-          <thead><tr><th>Team</th><th>P</th><th>W</th><th>GD</th><th>Pts</th></tr></thead>
-          <tbody>
-            <tr><td>Türkiye</td><td>0</td><td>0</td><td>0</td><td class="pts">0</td></tr>
-            <tr><td>Paraguay</td><td>0</td><td>0</td><td>0</td><td class="pts">0</td></tr>
-            <tr><td>Australia</td><td>0</td><td>0</td><td>0</td><td class="pts">0</td></tr>
-            <tr><td>USA</td><td>0</td><td>0</td><td>0</td><td class="pts">0</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="stat-block">
-        <div class="stat-block-header">Group J — Levi's</div>
-        <table class="group-table">
-          <thead><tr><th>Team</th><th>P</th><th>W</th><th>GD</th><th>Pts</th></tr></thead>
-          <tbody>
-            <tr><td>Austria</td><td>0</td><td>0</td><td>0</td><td class="pts">0</td></tr>
-            <tr><td>Jordan</td><td>0</td><td>0</td><td>0</td><td class="pts">0</td></tr>
-            <tr><td>Algeria</td><td>0</td><td>0</td><td>0</td><td class="pts">0</td></tr>
-            <tr><td>Argentina</td><td>0</td><td>0</td><td>0</td><td class="pts">0</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="ad-slot">
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3227592099558305" data-ad-format="auto" data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="section-label">Match Day Practical Guide</div>
-  <div class="tips-grid">
-    <div class="tip-card"><div class="tip-icon">🚪</div><div class="tip-title">Arriving & Gates</div><div class="tip-body"><strong>Arrive 90 minutes before kickoff minimum.</strong> For noon matches add extra time. Lines peak 60 to 75 minutes before kickoff. Your designated entry gate is printed on your ticket. All entry requires a <strong>clear bag (12"x6"x12" max)</strong> or small clutch (4.5"x6.5").</div></div>
-    <div class="tip-card"><div class="tip-icon">🚆</div><div class="tip-title">Getting There</div><div class="tip-body"><strong>Caltrain to Mountain View</strong> then VTA light rail to Great America Station. BART riders: transfer at Milpitas to VTA Orange Line. Add 30 extra minutes from SF. <strong>Driving:</strong> Lots open 3 hours before kickoff; reserve in advance. <strong>Rideshare pickup:</strong> Red Lot 7 (north) or Freedom Circle (south) depending on your exit gate — full routes on the <a href="getting-in.html">Getting In</a> page.</div></div>
-    <div class="tip-card"><div class="tip-icon">☀️</div><div class="tip-title">Weather to Expect</div><div class="tip-body"><strong>Noon kickoffs:</strong> Open bowl, Silicon Valley sun. Bring sunscreen, a hat, water. West-side upper deck is fully exposed. <strong>Evening kickoffs:</strong> Starts warm, marine layer drops it to 55°F by halftime. Bring a layer.</div></div>
-    <div class="tip-card"><div class="tip-icon">🎒</div><div class="tip-title">What to Bring</div><div class="tip-body"><strong>Allowed:</strong> One clear bag, one small clutch, sealed water bottle up to 1 liter, sunscreen, medication in original packaging. <strong>Not allowed:</strong> Backpacks, cans, glass, selfie sticks, large umbrellas, laser pointers, noisemakers, outside food.</div></div>
-    <div class="tip-card"><div class="tip-icon">🍔</div><div class="tip-title">Food & Drink</div><div class="tip-body">Stadium food runs $18 to $25 per item. Concession lines peak at halftime. Buy before kickoff or wait until the 30-minute mark when lines thin. The fan zone near Great America Station has cheaper options if you arrive early.</div></div>
-    <div class="tip-card"><div class="tip-icon">📱</div><div class="tip-title">Tickets & Phone</div><div class="tip-body"><strong>Download your ticket before you arrive</strong> and screenshot it as a backup. Stadium Wi-Fi handles crowds but do not depend on it. Charge your phone fully. Concourse tunnels are signal dead zones. International visitors: check roaming settings before arriving.</div></div>
-  </div>
-
-  <div class="section-label">Match Day Photos</div>
+<div class="section-label">Match Day Photos</div>
   <div id="gallery"></div>
- 
 
-<div class="ad-slot">
-   ... ads ...
-</div>
+  <div class="ad-slot">
+    <ins class="adsbygoogle" style="display:block"
+         data-ad-client="ca-pub-3227592099558305"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
 
-<footer>
-   ... stadium info ...
-</footer>
-
-<script src="app.js"></script>
-<script src="chatbot.js"></script>
-<script src="gallery.js"></script>
-</body>
-</html>
-
-
-<div class="ad-slot">
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-..."
-       data-ad-slot="..."
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-</div>
+</div> <!-- closes .page-wrap -->
 
 <footer>
   <div>Levi's Stadium · Santa Clara, California · FIFA World Cup 2026</div>
   <div>
-    6 Matches · June 13 – July 1 · 
-    <a href="getting-in.html">Getting In</a> · 
-    <a href="fanguide.html">Fan Guide</a> · 
+    6 Matches · June 13 – July 1 ·
+    <a href="getting-in.html">Getting In</a> ·
+    <a href="fanguide.html">Fan Guide</a> ·
     <a href="teamguide.html">Team Guide</a>
   </div>
   <div style="margin-top:6px; opacity:0.45;">
@@ -224,6 +30,3 @@
 
 </body>
 </html>
-
-
- 
