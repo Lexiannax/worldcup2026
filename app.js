@@ -255,5 +255,5 @@ function setFilter(filter, btn) {
 // INIT
 renderSchedule();
 updateHero();
-loadNews();
+// loadNews(); -- disabled for now
 setInterval(() => { updateHero(); updateMiniCountdowns(); }, 1000);
