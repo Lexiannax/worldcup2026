@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bay Area Stadium – 3D Venue Guide</title>
+
+<!-- External stylesheet -->
+<link rel="stylesheet" href="styles.css">
+
+<!-- Page-specific styles -->
+<style>
+  /* Dark container for 3D bowl */
+  .visualizer-container {
+    background: #0F1B2E;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  #stadium-canvas {
+    width: 100%;
+    height: 420px;
+    display: block;
+    touch-action: none;
+  }
+
+  /* Sector buttons */
+  .sector-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    margin-top: 10px;
+  }
+
+  .sector-btn {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    padding: 10px 4px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .sector-btn.active {
+    background: #B11116;
+    color: #fff;
+    border-color: #B11116;
+  }
+
+  /* Status panel */
+  .status-panel {
+    background: #f8f8f8;
+    border-left: 4px solid #5C7184;
+    padding: 12px;
+    border-radius: 6px;
+    margin-top: 12px;
+  }
+
+  .status-title {
+    font-weight: bold;
+    font-size: 15px;
+  }
+
+  .status-meta {
+    font-size: 13px;
+    color: #5C7184;
+  }
+
+  /* Map container */
+  #ref-map {
+    width: 100%;
+    height: 320px;
+    background: #e0e0e0;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 10px;
+  }
+
+  #ref-map-inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>
+
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="logo">WC26 // BAY AREA HUB</div>
+  <nav class="nav">
+    <a href="index.html" class="nav-link">HOME</a>
+    <a href="getting-in.html" class="nav-link">GETTING IN</a>
+    <a href="fanguide.html" class="nav-link">FAN GUIDE</a>
+    <a href="teamguide.html" class="nav-link">TEAM GUIDE</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Bay Area Stadium – 3D Venue Guide</h1>
+  <p>Interactive Venue & Transit Guide</p>
+</section>
+
+<main class="page-wrap">
+
+  <!-- 3D BOWL VISUALIZER -->
+  <div class="visualizer-container">
+    <canvas id="stadium-canvas"></canvas>
+  </div>
+
+  <div class="card">
+    <h2>Stadium Zones</h2>
+
+    <div class="sector-grid">
+      <button class="sector-btn" id="btn-west" onclick="selectZone('west')">West</button>
+      <button class="sector-btn" id="btn-east" onclick="selectZone('east')">East</button>
+      <button class="sector-btn" id="btn-north" onclick="selectZone('north')">North</button>
+      <button class="sector-btn" id="btn-south" onclick="selectZone('south')">South</button>
+    </div>
+
+    <div class="status-panel">
+      <div class="status-title" id="panel-title">Select a Zone</div>
+      <div class="status-meta" id="panel-text">Tap a sector button or rotate the bowl.</div>
+    </div>
+  </div>
+  <!-- STREET MAP SECTION -->
+  <div class="card">
+    <h2>Street Map</h2>
+
+    <div id="ref-map">
+      <div id="ref-map-inner">
+        <!-- Placeholder until you add your real map image -->
+        <img id="ref-map-img" src="placeholder-map.jpg" alt="Map">
+      </div>
+    </div>
+
+    <p style="margin-top:10px; font-size:14px; color:#555;">
+      Drag the map, zoom in/out, and explore the surrounding area.  
+      You can add your own high‑resolution map later.
+    </p>
+  </div>
+
+  <!-- TRANSIT INFORMATION -->
+  <div class="card">
+    <h2>Transit Overview</h2>
+
+    <div class="info-grid">
+
+      <div class="info-card">
+        <h3>Rail Service</h3>
+        <p>Frequent matchday service to the station north of the venue.</p>
+      </div>
+
+      <div class="info-card">
+        <h3>Shuttles</h3>
+        <p>Matchday shuttles operate from designated pickup zones.</p>
+      </div>
+
+      <div class="info-card">
+        <h3>Bus Routes</h3>
+        <p>Multiple bus lines serve the surrounding area.</p>
+      </div>
+
+      <div class="info-card">
+        <h3>Rideshare</h3>
+        <p>Pickup and drop‑off zones located in the North and South areas.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PARKING & CLOSURES -->
+  <div class="card">
+    <h2>Parking & Road Closures</h2>
+
+    <p>Neutral, non‑branded parking zones with walking routes to the venue.</p>
+
+    <table class="closure-table">
+      <tr>
+        <th>Area</th>
+        <th>Status</th>
+        <th>Notes</th>
+      </tr>
+
+      <tr>
+        <td>North Zone</td>
+        <td>Open</td>
+        <td>General parking</td>
+      </tr>
+
+      <tr>
+        <td>South Zone</td>
+        <td>Open</td>
+        <td>General parking</td>
+      </tr>
+
+      <tr>
+        <td>Premium Zone</td>
+        <td>Restricted</td>
+        <td>Permit required</td>
+      </tr>
+
+      <tr>
+        <td>East Access Road</td>
+        <td>Closed</td>
+        <td>Matchday only</td>
+      </tr>
+
+    </table>
+  </div>
+
+  <!-- ACCESSIBILITY -->
+  <div class="card">
+    <h2>Accessibility</h2>
+    <p>
+      Accessible seating, mobility assistance, and ADA‑friendly transit options
+      are available throughout the venue.  
+      Drop‑off zones are located near the North and South entrances.
+    </p>
+  </div>
+
+  <!-- LEGEND -->
+  <div class="card">
+    <h2>Map Legend</h2>
+
+    <div class="info-grid">
+
+      <div class="info-card">
+        <h3>⭐ Your Location</h3>
+        <p>Drag the star on the map to mark your position.</p>
+      </div>
+
+      <div class="info-card">
+        <h3>🅿 Parking Zones</h3>
+        <p>General, Premium, and ADA parking areas.</p>
+      </div>
+
+      <div class="info-card">
+        <h3>🚶 Walking Routes</h3>
+        <p>Safe walking paths to the venue.</p>
+      </div>
+
+      <div class="info-card">
+        <h3>🚉 Transit Stops</h3>
+        <p>Rail, shuttle, and bus access points.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- INTERACTIVE MARKER SYSTEM -->
+  <div class="card">
+    <h2>Interactive Markers</h2>
+    <p>
+      Tap or click on the 3D bowl to highlight a zone.  
+      Drag the star on the map to set your location.
+    </p>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>Bay Area Stadium · Fan‑Made Guide</p>
+</footer>
+
+<!-- JAVASCRIPT ENGINE -->
+<script>
+/* ================================
+   3D BOWL ENGINE — CLEANED VERSION
+================================== */
+
+const canvas = document.getElementById("stadium-canvas");
+const ctx = canvas.getContext("2d");
+
+let zoom = 0.85;
+let rotationX = 62 * Math.PI/180;
+let rotationZ = 45 * Math.PI/180;
+let activeZone = "west";
+
+const zones = {
+  west:  { name: "West Zone",  color: "#B11116" },
+  east:  { name: "East Zone",  color: "#B11116" },
+  north: { name: "North Zone", color: "#B11116" },
+  south: { name: "South Zone", color: "#B11116" }
+};
+
+function resizeCanvas() {
+  const box = canvas.getBoundingClientRect();
+  canvas.width = box.width * window.devicePixelRatio;
+  canvas.height = box.height * window.devicePixelRatio;
+  ctx.setTransform(window.devicePixelRatio,0,0,window.devicePixelRatio,0,0);
+}
+window.addEventListener("resize", resizeCanvas);
+resizeCanvas();
+
+/* Projection math */
+function project(x, y, z, w, h) {
+  let cosZ = Math.cos(rotationZ), sinZ = Math.sin(rotationZ);
+  let rx = x * cosZ - y * sinZ;
+  let ry = x * sinZ + y * cosZ;
+
+  let cosX = Math.cos(rotationX), sinX = Math.sin(rotationX);
+  let ty = ry * cosX - z * sinX;
+
+  let scale = (w * 0.30) * zoom;
+
+  return {
+    x: w/2 + rx * scale,
+    y: h/2 + ty * scale
+  };
+}
+
+/* Draw loop */
+function draw() {
+  const w = canvas.width / window.devicePixelRatio;
+  const h = canvas.height / window.devicePixelRatio;
+
+  ctx.fillStyle = "#0F1B2E";
+  ctx.fillRect(0, 0, w, h);
+
+  // Pitch
+  const p1 = project(-0.45, -0.28, 0, w, h);
+  const p2 = project(0.45, -0.28, 0, w, h);
+  const p3 = project(0.45, 0.28, 0, w, h);
+  const p4 = project(-0.45, 0.28, 0, w, h);
+
+  ctx.fillStyle = "#1B5E20";
+  ctx.beginPath();
+  ctx.moveTo(p1.x, p1.y);
+  ctx.lineTo(p2.x, p2.y);
+  ctx.lineTo(p3.x, p3.y);
+  ctx.lineTo(p4.x, p4.y);
+  ctx.closePath();
+  ctx.fill();
+
+  requestAnimationFrame(draw);
+}
+draw();
+
+/* Zone selection */
+function selectZone(zone) {
+  activeZone = zone;
+  document.getElementById("panel-title").innerText = zones[zone].name;
+  document.getElementById("panel-text").innerText = "Zone selected.";
+  document.querySelectorAll(".sector-btn").forEach(b => b.classList.remove("active"));
+  document.getElementById("btn-" + zone).classList.add("active");
+}
+</script>
+
+</body>
+</html>
+
+
